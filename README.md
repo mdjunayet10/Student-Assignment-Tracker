@@ -4,7 +4,7 @@ A comprehensive assignment management system for Bangladesh University of Profes
 
 ## 🎯 Project Overview
 
-The BUP UCAM Assignment Tracker is designed to streamline assignment management within the university's existing UCAM system. This Object-Oriented Programming (OOP) based solution provides:
+The Student Assignment Tracker is designed to streamline assignment management within the university's existing UCAM system. This Object-Oriented Programming (OOP) based solution provides:
 
 - **Teachers**: Create and manage assignments, grade submissions, track student progress
 - **Students**: View assignments, submit work, track grades and feedback
