@@ -1,6 +1,6 @@
 # Student Assignment Tracker
 
-A comprehensive assignment management system for angladesh University of Professionals (BUP) that eliminates the need for Google Classroom by providing teachers and students with a complete platform to manage assignments, submissions, and grading.
+A comprehensive assignment management system for Bangladesh University of Professionals (BUP) that eliminates the need for Google Classroom by providing teachers and students with a complete platform to manage assignments, submissions, and grading.
 
 ## 🎯 Project Overview
 
