@@ -5,7 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student Assignment Tracker</title>
   <style>
-<<<<<<< HEAD
+    :root {
+      --bg: #eef4ff;
+      --panel: #ffffff;
+      --text: #102033;
+      --muted: #64748b;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #7c3aed;
+      --success: #16a34a;
+      --warning: #f59e0b;
+      --danger: #dc2626;
+      --border: #dbe4f0;
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -13,321 +27,680 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #1f2937;
-      line-height: 1.6;
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(124, 58, 237, 0.16), transparent 32%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
     }
 
-    header {
-      background: linear-gradient(135deg, #2563eb, #1e40af);
-      color: white;
-      padding: 70px 20px;
-      text-align: center;
-=======
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #172033;
-    }
-
-    header {
-      background: linear-gradient(135deg, #1e3a8a, #2563eb);
-      color: white;
-      text-align: center;
-      padding: 70px 20px;
->>>>>>> a76d5a4 (Add GitHub Pages showcase site)
-    }
-
-    header h1 {
-      font-size: 42px;
-<<<<<<< HEAD
-      margin-bottom: 15px;
-    }
-
-    header p {
-      max-width: 760px;
-      margin: 0 auto 25px;
-      font-size: 18px;
-=======
-      margin-bottom: 12px;
-    }
-
-    header p {
-      font-size: 18px;
-      max-width: 750px;
-      margin: 0 auto 25px;
->>>>>>> a76d5a4 (Add GitHub Pages showcase site)
-    }
-
-    .button {
-      display: inline-block;
-      background: white;
-<<<<<<< HEAD
-      color: #1e40af;
-      padding: 12px 22px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 6px;
-    }
-
-    .button.secondary {
-      background: #111827;
-      color: white;
-    }
-
-    main {
-      max-width: 1100px;
+    .app {
+      width: min(1180px, calc(100% - 32px));
       margin: 0 auto;
-=======
-      color: #1e3a8a;
-      padding: 12px 22px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
+      padding: 28px 0 50px;
     }
 
-    main {
-      max-width: 1000px;
-      margin: auto;
->>>>>>> a76d5a4 (Add GitHub Pages showcase site)
-      padding: 40px 20px;
+    .topbar {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      position: sticky;
+      top: 16px;
+      z-index: 20;
     }
 
-    section {
-      background: white;
-<<<<<<< HEAD
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 20px;
+    }
+
+    .logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: grid;
+      place-items: center;
+      color: white;
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.28);
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    button, .button {
+      border: 0;
       border-radius: 14px;
-      padding: 28px;
-      margin-bottom: 24px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      padding: 11px 15px;
+      font-weight: 800;
+      cursor: pointer;
+      background: #eaf1ff;
+      color: #1e3a8a;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
 
-    h2 {
-      color: #1e40af;
-      margin-bottom: 14px;
+    button:hover, .button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.12);
+    }
+
+    .primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+    }
+
+    .danger {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .hero {
+      margin-top: 28px;
+      background: linear-gradient(135deg, #1e3a8a, #2563eb 55%, #7c3aed);
+      color: white;
+      border-radius: 32px;
+      padding: 46px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      right: -80px;
+      top: -80px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 62px);
+      line-height: 1.02;
+      max-width: 760px;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      font-size: 18px;
+      opacity: 0.92;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero .button {
+      background: white;
+      color: #1e3a8a;
+    }
+
+    .hero .button.secondary {
+      background: rgba(255, 255, 255, 0.14);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .stats {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 16px;
+    }
+
+    .stat strong {
+      font-size: 28px;
+      display: block;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-      margin-top: 18px;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 22px;
+      margin-top: 24px;
     }
 
-    .card {
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 18px;
-      background: #f9fafb;
+    .panel {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: var(--shadow);
     }
 
-    ul {
-      margin-left: 20px;
-      margin-top: 10px;
+    .panel h2 {
+      margin-bottom: 14px;
+      font-size: 24px;
     }
 
-    code, pre {
-      background: #111827;
-      color: #f9fafb;
-      border-radius: 8px;
+    .muted {
+      color: var(--muted);
+      font-size: 14px;
     }
 
-    pre {
-      overflow-x: auto;
+    .tabs {
+      display: flex;
+      background: #edf4ff;
+      border-radius: 18px;
+      padding: 6px;
+      margin-bottom: 16px;
+      gap: 6px;
+    }
+
+    .tab {
+      flex: 1;
+      background: transparent;
+      color: #475569;
+      box-shadow: none !important;
+    }
+
+    .tab.active {
+      background: white;
+      color: var(--primary);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08) !important;
+    }
+
+    label {
+      font-weight: 800;
+      display: block;
+      margin: 14px 0 8px;
+      color: #1f2937;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 13px;
+      outline: none;
+      font-size: 15px;
+      background: white;
+      color: var(--text);
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .assignment {
+      border: 1px solid var(--border);
+      border-radius: 20px;
       padding: 16px;
+      background: #fbfdff;
+    }
+
+    .assignment-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .assignment h3 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+      background: #e0ecff;
+      color: #1d4ed8;
+    }
+
+    .pill.done {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .pill.late {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .assignment-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
       margin-top: 12px;
-=======
-      padding: 28px;
-      border-radius: 16px;
-      margin-bottom: 24px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
 
-    h2 {
-      color: #1e3a8a;
-    }
-
-    ul {
-      line-height: 1.8;
-    }
-
-    pre {
-      background: #0f172a;
-      color: #e5e7eb;
-      padding: 16px;
-      border-radius: 12px;
-      overflow-x: auto;
->>>>>>> a76d5a4 (Add GitHub Pages showcase site)
-    }
-
-    footer {
+    .empty {
       text-align: center;
-      padding: 25px;
-<<<<<<< HEAD
-      color: #6b7280;
-=======
-      background: #111827;
+      border: 2px dashed var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      color: var(--muted);
+      background: #f8fbff;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      background: #0f172a;
       color: white;
->>>>>>> a76d5a4 (Add GitHub Pages showcase site)
+      padding: 13px 18px;
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.2s ease;
+      z-index: 50;
+    }
+
+    .toast.show {
+      opacity: 1;
+      bottom: 34px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 850px) {
+      .topbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav {
+        justify-content: stretch;
+      }
+
+      .nav button {
+        flex: 1;
+      }
+
+      .grid, .stats, .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 30px 22px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Student Assignment Tracker</h1>
-<<<<<<< HEAD
-    <p>
-      A Java-based assignment management system for teachers and students to manage courses,
-      assignments, submissions, grading, and progress tracking.
-    </p>
-    <a class="button" href="https://github.com/mdjunayet10/Student-Assignment-Tracker">View on GitHub</a>
-    <a class="button secondary" href="#run">Run Locally</a>
-=======
-    <p>A Java-based assignment management system for teachers and students.</p>
-    <a class="button" href="https://github.com/mdjunayet10/Student-Assignment-Tracker" target="_blank">
-      View on GitHub
-    </a>
->>>>>>> a76d5a4 (Add GitHub Pages showcase site)
-  </header>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">📘</div>
+        <span>Student Assignment Tracker</span>
+      </div>
+      <nav class="nav">
+        <button onclick="showSection('dashboard')" class="primary">Dashboard</button>
+        <button onclick="showSection('teacher')">Teacher</button>
+        <button onclick="showSection('student')">Student</button>
+        <a class="button" href="https://github.com/mdjunayet10/Student-Assignment-Tracker" target="_blank">GitHub</a>
+      </nav>
+    </header>
 
-  <main>
-    <section>
-      <h2>Project Overview</h2>
+    <section class="hero">
+      <h1>Track assignments, submissions, grades, and progress in one place.</h1>
       <p>
-<<<<<<< HEAD
-        Student Assignment Tracker helps teachers create courses and assignments, while students
-        can view assignments, submit work, and track grades. The project follows Object-Oriented
-        Programming principles using Java, Maven, Swing GUI, service classes, models, and JSON-based
-        data persistence.
-=======
-        Student Assignment Tracker helps teachers manage assignments, submissions,
-        grading, and feedback while allowing students to view tasks, submit work,
-        and track progress.
->>>>>>> a76d5a4 (Add GitHub Pages showcase site)
+        A web frontend for the Student Assignment Tracker project. Teachers can create assignments,
+        students can submit work, and progress is saved locally in the browser.
       </p>
-    </section>
+      <div class="hero-actions">
+        <button class="button" onclick="showSection('teacher')">Create Assignment</button>
+        <button class="button secondary" onclick="showSection('student')">Submit Work</button>
+      </div>
 
-    <section>
-      <h2>Features</h2>
-<<<<<<< HEAD
-      <div class="grid">
-        <div class="card">
-          <h3>Teacher Tools</h3>
-          <ul>
-            <li>Create and manage courses</li>
-            <li>Create assignments</li>
-            <li>Review student submissions</li>
-            <li>Grade work and give feedback</li>
-          </ul>
+      <div class="stats">
+        <div class="stat">
+          <strong id="statAssignments">0</strong>
+          <span>Assignments</span>
         </div>
-        <div class="card">
-          <h3>Student Tools</h3>
-          <ul>
-            <li>View enrolled courses</li>
-            <li>See active assignments</li>
-            <li>Submit assignment content</li>
-            <li>Track grades and feedback</li>
-          </ul>
+        <div class="stat">
+          <strong id="statSubmissions">0</strong>
+          <span>Submissions</span>
         </div>
-        <div class="card">
-          <h3>System Features</h3>
-          <ul>
-            <li>Role-based login</li>
-            <li>JSON data persistence</li>
-            <li>Java Swing interface</li>
-            <li>Maven project structure</li>
-          </ul>
+        <div class="stat">
+          <strong id="statGraded">0</strong>
+          <span>Graded</span>
+        </div>
+        <div class="stat">
+          <strong id="statAverage">0%</strong>
+          <span>Average Grade</span>
         </div>
       </div>
-=======
-      <ul>
-        <li>Teacher and student login system</li>
-        <li>Course and assignment management</li>
-        <li>Student assignment submission</li>
-        <li>Grading and feedback system</li>
-        <li>JSON-based data storage</li>
-        <li>Java Swing desktop interface</li>
-      </ul>
->>>>>>> a76d5a4 (Add GitHub Pages showcase site)
     </section>
 
-    <section>
-      <h2>Technology Stack</h2>
-      <ul>
-<<<<<<< HEAD
-        <li>Java 23</li>
-        <li>Maven</li>
-        <li>Java Swing GUI</li>
-        <li>Jackson JSON processing</li>
-        <li>FlatLaf look and feel</li>
-      </ul>
-    </section>
+    <main class="grid">
+      <section id="teacher" class="panel">
+        <div class="tabs">
+          <button class="tab active" onclick="setRoleTab('teacher')">Teacher Panel</button>
+          <button class="tab" onclick="setRoleTab('student')">Student Panel</button>
+        </div>
 
-    <section id="run">
-      <h2>Run Locally</h2>
-      <p>Clone the repository, build it with Maven, and run the Java application:</p>
-      <pre><code>git clone https://github.com/mdjunayet10/Student-Assignment-Tracker.git
-cd Student-Assignment-Tracker
-mvn clean compile
-mvn exec:java -Dexec.mainClass="org.app.Main"</code></pre>
-    </section>
+        <h2>Create Assignment</h2>
+        <p class="muted">Add assignments for students. This static frontend stores data in your browser.</p>
 
-    <section>
-      <h2>Organized Project Structure</h2>
-      <pre><code>Student-Assignment-Tracker/
-├── docs/
-│   └── index.html
-├── src/
-│   └── main/
-│       └── java/
-│           └── org/
-│               └── app/
-│                   ├── Main.java
-│                   ├── controller/
-│                   ├── gui/
-│                   ├── model/
-│                   ├── service/
-│                   └── util/
-├── data/
-├── pom.xml
-├── README.md
-└── .gitignore</code></pre>
-=======
-        <li>Java</li>
-        <li>Maven</li>
-        <li>Java Swing</li>
-        <li>Jackson JSON</li>
-        <li>Object-Oriented Programming</li>
-      </ul>
-    </section>
+        <label for="course">Course</label>
+        <input id="course" placeholder="Example: Object Oriented Programming" />
 
-    <section>
-      <h2>Run Locally</h2>
-      <pre>git clone https://github.com/mdjunayet10/Student-Assignment-Tracker.git
-cd Student-Assignment-Tracker
-mvn clean compile
-mvn exec:java -Dexec.mainClass="org.app.Main"</pre>
-    </section>
+        <label for="title">Assignment Title</label>
+        <input id="title" placeholder="Example: Java Inheritance Task" />
 
-    <section>
-      <h2>Note</h2>
-      <p>
-        This GitHub Pages site is a static project showcase page.
-        The actual app is a Java desktop application and must be run locally.
-      </p>
->>>>>>> a76d5a4 (Add GitHub Pages showcase site)
-    </section>
-  </main>
+        <label for="description">Description</label>
+        <textarea id="description" placeholder="Write assignment instructions..."></textarea>
 
-  <footer>
-<<<<<<< HEAD
-    <p>Developed by mdjunayet10 · Student Assignment Tracker</p>
-=======
-    <p>Developed by mdjunayet10</p>
->>>>>>> a76d5a4 (Add GitHub Pages showcase site)
-  </footer>
+        <div class="form-row">
+          <div>
+            <label for="dueDate">Due Date</label>
+            <input id="dueDate" type="date" />
+          </div>
+          <div>
+            <label for="marks">Maximum Marks</label>
+            <input id="marks" type="number" min="1" value="100" />
+          </div>
+        </div>
+
+        <br />
+        <button class="primary" onclick="createAssignment()">Add Assignment</button>
+        <button class="danger" onclick="resetDemo()">Reset Demo Data</button>
+
+        <div class="list" id="teacherList"></div>
+      </section>
+
+      <section id="student" class="panel">
+        <h2>Student Assignments</h2>
+        <p class="muted">View active assignments and submit your work.</p>
+        <div class="list" id="studentList"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script>
+    const STORAGE_KEY = "student-assignment-tracker-frontend-v1";
+
+    const sampleData = {
+      assignments: [
+        {
+          id: crypto.randomUUID(),
+          course: "Object Oriented Programming",
+          title: "Java Class Design",
+          description: "Create model classes for a university assignment tracking system.",
+          dueDate: new Date(Date.now() + 86400000 * 5).toISOString().slice(0, 10),
+          marks: 100,
+          submissions: []
+        },
+        {
+          id: crypto.randomUUID(),
+          course: "Software Engineering",
+          title: "Use Case Diagram",
+          description: "Prepare a use case diagram for teacher and student assignment workflows.",
+          dueDate: new Date(Date.now() + 86400000 * 9).toISOString().slice(0, 10),
+          marks: 50,
+          submissions: []
+        }
+      ]
+    };
+
+    let data = loadData();
+
+    function loadData() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) return JSON.parse(saved);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(sampleData));
+      return structuredClone(sampleData);
+    }
+
+    function saveData() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      render();
+    }
+
+    function toast(message) {
+      const el = document.getElementById("toast");
+      el.textContent = message;
+      el.classList.add("show");
+      setTimeout(() => el.classList.remove("show"), 1800);
+    }
+
+    function createAssignment() {
+      const course = document.getElementById("course").value.trim();
+      const title = document.getElementById("title").value.trim();
+      const description = document.getElementById("description").value.trim();
+      const dueDate = document.getElementById("dueDate").value;
+      const marks = Number(document.getElementById("marks").value || 100);
+
+      if (!course || !title || !description || !dueDate) {
+        toast("Please fill all assignment fields.");
+        return;
+      }
+
+      data.assignments.unshift({
+        id: crypto.randomUUID(),
+        course,
+        title,
+        description,
+        dueDate,
+        marks,
+        submissions: []
+      });
+
+      document.getElementById("course").value = "";
+      document.getElementById("title").value = "";
+      document.getElementById("description").value = "";
+      document.getElementById("dueDate").value = "";
+      document.getElementById("marks").value = "100";
+
+      saveData();
+      toast("Assignment created.");
+    }
+
+    function submitWork(id) {
+      const assignment = data.assignments.find(item => item.id === id);
+      const studentName = prompt("Student name:");
+      if (!studentName) return;
+
+      const content = prompt("Submission text:");
+      if (!content) return;
+
+      assignment.submissions.push({
+        id: crypto.randomUUID(),
+        studentName,
+        content,
+        submittedAt: new Date().toISOString(),
+        grade: null,
+        feedback: ""
+      });
+
+      saveData();
+      toast("Submission sent.");
+    }
+
+    function gradeSubmission(assignmentId, submissionId) {
+      const assignment = data.assignments.find(item => item.id === assignmentId);
+      const submission = assignment.submissions.find(item => item.id === submissionId);
+
+      const grade = Number(prompt(`Enter grade out of ${assignment.marks}:`, submission.grade ?? ""));
+      if (Number.isNaN(grade)) return;
+
+      const feedback = prompt("Feedback:", submission.feedback || "Good work.") || "";
+
+      submission.grade = Math.max(0, Math.min(grade, assignment.marks));
+      submission.feedback = feedback;
+
+      saveData();
+      toast("Submission graded.");
+    }
+
+    function deleteAssignment(id) {
+      if (!confirm("Delete this assignment?")) return;
+      data.assignments = data.assignments.filter(item => item.id !== id);
+      saveData();
+      toast("Assignment deleted.");
+    }
+
+    function resetDemo() {
+      if (!confirm("Reset all local demo data?")) return;
+      localStorage.removeItem(STORAGE_KEY);
+      data = loadData();
+      render();
+      toast("Demo data reset.");
+    }
+
+    function isLate(dueDate) {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const due = new Date(dueDate);
+      return due < today;
+    }
+
+    function renderStats() {
+      const assignments = data.assignments.length;
+      const submissions = data.assignments.flatMap(item => item.submissions);
+      const graded = submissions.filter(item => item.grade !== null);
+      const average = graded.length
+        ? Math.round(graded.reduce((sum, item) => sum + item.grade, 0) / graded.length)
+        : 0;
+
+      document.getElementById("statAssignments").textContent = assignments;
+      document.getElementById("statSubmissions").textContent = submissions.length;
+      document.getElementById("statGraded").textContent = graded.length;
+      document.getElementById("statAverage").textContent = average + "%";
+    }
+
+    function assignmentCard(assignment, mode) {
+      const submissions = assignment.submissions || [];
+      const late = isLate(assignment.dueDate);
+
+      const submissionHtml = submissions.length
+        ? submissions.map(sub => `
+          <div class="assignment" style="margin-top:10px;">
+            <div class="assignment-header">
+              <div>
+                <h3>${escapeHtml(sub.studentName)}</h3>
+                <p class="muted">${escapeHtml(sub.content)}</p>
+                <p class="muted">Submitted: ${new Date(sub.submittedAt).toLocaleString()}</p>
+                ${sub.grade !== null ? `<p><strong>Grade:</strong> ${sub.grade}/${assignment.marks}</p>` : `<p class="muted">Not graded yet</p>`}
+                ${sub.feedback ? `<p><strong>Feedback:</strong> ${escapeHtml(sub.feedback)}</p>` : ""}
+              </div>
+              <span class="pill ${sub.grade !== null ? "done" : ""}">${sub.grade !== null ? "Graded" : "Pending"}</span>
+            </div>
+            ${mode === "teacher" ? `<button onclick="gradeSubmission('${assignment.id}', '${sub.id}')">Grade</button>` : ""}
+          </div>
+        `).join("")
+        : `<div class="empty">No submissions yet.</div>`;
+
+      return `
+        <article class="assignment">
+          <div class="assignment-header">
+            <div>
+              <h3>${escapeHtml(assignment.title)}</h3>
+              <p class="muted">${escapeHtml(assignment.course)}</p>
+            </div>
+            <span class="pill ${late ? "late" : ""}">${late ? "Late" : "Active"}</span>
+          </div>
+          <p>${escapeHtml(assignment.description)}</p>
+          <p class="muted">Due: ${assignment.dueDate} · Marks: ${assignment.marks}</p>
+          <div class="assignment-actions">
+            ${mode === "student" ? `<button class="primary" onclick="submitWork('${assignment.id}')">Submit Work</button>` : ""}
+            ${mode === "teacher" ? `<button class="danger" onclick="deleteAssignment('${assignment.id}')">Delete</button>` : ""}
+          </div>
+          ${mode === "teacher" ? `<h3 style="margin-top:16px;">Submissions</h3>${submissionHtml}` : ""}
+        </article>
+      `;
+    }
+
+    function render() {
+      renderStats();
+
+      const teacherList = document.getElementById("teacherList");
+      const studentList = document.getElementById("studentList");
+
+      teacherList.innerHTML = data.assignments.length
+        ? data.assignments.map(item => assignmentCard(item, "teacher")).join("")
+        : `<div class="empty">No assignments yet. Create one from the teacher panel.</div>`;
+
+      studentList.innerHTML = data.assignments.length
+        ? data.assignments.map(item => assignmentCard(item, "student")).join("")
+        : `<div class="empty">No assignments available.</div>`;
+    }
+
+    function showSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function setRoleTab(role) {
+      document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+      event.target.classList.add("active");
+      showSection(role);
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    render();
+  </script>
 </body>
 </html>
