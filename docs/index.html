@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student Assignment Tracker</title>
   <style>
+<<<<<<< HEAD
     * {
       box-sizing: border-box;
       margin: 0;
@@ -23,10 +24,25 @@
       color: white;
       padding: 70px 20px;
       text-align: center;
+=======
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #172033;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+>>>>>>> a76d5a4 (Add GitHub Pages showcase site)
     }
 
     header h1 {
       font-size: 42px;
+<<<<<<< HEAD
       margin-bottom: 15px;
     }
 
@@ -34,11 +50,21 @@
       max-width: 760px;
       margin: 0 auto 25px;
       font-size: 18px;
+=======
+      margin-bottom: 12px;
+    }
+
+    header p {
+      font-size: 18px;
+      max-width: 750px;
+      margin: 0 auto 25px;
+>>>>>>> a76d5a4 (Add GitHub Pages showcase site)
     }
 
     .button {
       display: inline-block;
       background: white;
+<<<<<<< HEAD
       color: #1e40af;
       padding: 12px 22px;
       border-radius: 8px;
@@ -55,11 +81,24 @@
     main {
       max-width: 1100px;
       margin: 0 auto;
+=======
+      color: #1e3a8a;
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+>>>>>>> a76d5a4 (Add GitHub Pages showcase site)
       padding: 40px 20px;
     }
 
     section {
       background: white;
+<<<<<<< HEAD
       border-radius: 14px;
       padding: 28px;
       margin-bottom: 24px;
@@ -100,39 +139,80 @@
       overflow-x: auto;
       padding: 16px;
       margin-top: 12px;
+=======
+      padding: 28px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #1e3a8a;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    pre {
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 16px;
+      border-radius: 12px;
+      overflow-x: auto;
+>>>>>>> a76d5a4 (Add GitHub Pages showcase site)
     }
 
     footer {
       text-align: center;
       padding: 25px;
+<<<<<<< HEAD
       color: #6b7280;
+=======
+      background: #111827;
+      color: white;
+>>>>>>> a76d5a4 (Add GitHub Pages showcase site)
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Student Assignment Tracker</h1>
+<<<<<<< HEAD
     <p>
       A Java-based assignment management system for teachers and students to manage courses,
       assignments, submissions, grading, and progress tracking.
     </p>
     <a class="button" href="https://github.com/mdjunayet10/Student-Assignment-Tracker">View on GitHub</a>
     <a class="button secondary" href="#run">Run Locally</a>
+=======
+    <p>A Java-based assignment management system for teachers and students.</p>
+    <a class="button" href="https://github.com/mdjunayet10/Student-Assignment-Tracker" target="_blank">
+      View on GitHub
+    </a>
+>>>>>>> a76d5a4 (Add GitHub Pages showcase site)
   </header>
 
   <main>
     <section>
       <h2>Project Overview</h2>
       <p>
+<<<<<<< HEAD
         Student Assignment Tracker helps teachers create courses and assignments, while students
         can view assignments, submit work, and track grades. The project follows Object-Oriented
         Programming principles using Java, Maven, Swing GUI, service classes, models, and JSON-based
         data persistence.
+=======
+        Student Assignment Tracker helps teachers manage assignments, submissions,
+        grading, and feedback while allowing students to view tasks, submit work,
+        and track progress.
+>>>>>>> a76d5a4 (Add GitHub Pages showcase site)
       </p>
     </section>
 
     <section>
       <h2>Features</h2>
+<<<<<<< HEAD
       <div class="grid">
         <div class="card">
           <h3>Teacher Tools</h3>
@@ -162,11 +242,22 @@
           </ul>
         </div>
       </div>
+=======
+      <ul>
+        <li>Teacher and student login system</li>
+        <li>Course and assignment management</li>
+        <li>Student assignment submission</li>
+        <li>Grading and feedback system</li>
+        <li>JSON-based data storage</li>
+        <li>Java Swing desktop interface</li>
+      </ul>
+>>>>>>> a76d5a4 (Add GitHub Pages showcase site)
     </section>
 
     <section>
       <h2>Technology Stack</h2>
       <ul>
+<<<<<<< HEAD
         <li>Java 23</li>
         <li>Maven</li>
         <li>Java Swing GUI</li>
@@ -204,11 +295,39 @@ mvn exec:java -Dexec.mainClass="org.app.Main"</code></pre>
 ├── pom.xml
 ├── README.md
 └── .gitignore</code></pre>
+=======
+        <li>Java</li>
+        <li>Maven</li>
+        <li>Java Swing</li>
+        <li>Jackson JSON</li>
+        <li>Object-Oriented Programming</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Run Locally</h2>
+      <pre>git clone https://github.com/mdjunayet10/Student-Assignment-Tracker.git
+cd Student-Assignment-Tracker
+mvn clean compile
+mvn exec:java -Dexec.mainClass="org.app.Main"</pre>
+    </section>
+
+    <section>
+      <h2>Note</h2>
+      <p>
+        This GitHub Pages site is a static project showcase page.
+        The actual app is a Java desktop application and must be run locally.
+      </p>
+>>>>>>> a76d5a4 (Add GitHub Pages showcase site)
     </section>
   </main>
 
   <footer>
+<<<<<<< HEAD
     <p>Developed by mdjunayet10 · Student Assignment Tracker</p>
+=======
+    <p>Developed by mdjunayet10</p>
+>>>>>>> a76d5a4 (Add GitHub Pages showcase site)
   </footer>
 </body>
 </html>
