@@ -1,0 +1,61 @@
+{
+  "assignments" : {
+    "ASSIGN-0001" : {
+      "assignmentId" : "ASSIGN-0001",
+      "title" : "math",
+      "description" : "hhkk",
+      "course" : {
+        "active" : true,
+        "courseId" : "CRS-0001",
+        "courseName" : "Math",
+        "courseCode" : "2211",
+        "department" : "cse",
+        "creditHours" : 3,
+        "semester" : "Fall 2024",
+        "instructor" : {
+          "type" : "teacher",
+          "displayName" : "Prof. ahmed (cse)",
+          "active" : true,
+          "userId" : "TCH-0010",
+          "name" : "ahmed",
+          "email" : "ahmed@bup.edu",
+          "password" : "11111111",
+          "role" : "TEACHER",
+          "createdAt" : "2025-07-04T20:41:25.988405",
+          "isActive" : true,
+          "department" : "cse",
+          "employeeId" : "1"
+        },
+        "createdAt" : "2025-07-04T20:41:59.412417",
+        "isActive" : true
+      },
+      "creator" : {
+        "type" : "teacher",
+        "displayName" : "Prof. ahmed (cse)",
+        "active" : true,
+        "userId" : "TCH-0010",
+        "name" : "ahmed",
+        "email" : "ahmed@bup.edu",
+        "password" : "11111111",
+        "role" : "TEACHER",
+        "createdAt" : "2025-07-04T20:41:25.988405",
+        "isActive" : true,
+        "department" : "cse",
+        "employeeId" : "1"
+      },
+      "type" : "HOMEWORK",
+      "maxMarks" : 100,
+      "createdAt" : "2025-07-04T20:43:22.07472",
+      "dueDate" : "2025-08-11T20:42:00",
+      "attachmentPaths" : [ ],
+      "submissions" : [ ],
+      "status" : "ACTIVE",
+      "active" : true,
+      "submissionCount" : 0,
+      "overdue" : false
+    }
+  },
+  "submissions" : { },
+  "assignmentCounter" : 2,
+  "submissionCounter" : 1
+}

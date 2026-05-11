@@ -1,0 +1,99 @@
+{
+  "courses" : {
+    "CRS-0001" : {
+      "courseId" : "CRS-0001",
+      "courseName" : "Object Oriented Programming",
+      "courseCode" : "CSE-202",
+      "department" : "Computer Science",
+      "creditHours" : 3,
+      "semester" : "Fall 2024",
+      "instructor" : {
+        "type" : "teacher",
+        "displayName" : "Prof. Dr. Ahmed Rahman (Computer Science)",
+        "active" : true,
+        "userId" : "TCH-0001",
+        "name" : "Dr. Ahmed Rahman",
+        "email" : "ahmed@bup.edu.bd",
+        "password" : "password123",
+        "role" : "TEACHER",
+        "createdAt" : "2025-07-04T20:06:18.897131",
+        "isActive" : true,
+        "department" : "Computer Science",
+        "employeeId" : "EMP001"
+      },
+      "enrolledStudents" : [ {
+        "type" : "student",
+        "displayName" : "Mohammad Ali (201901001)",
+        "active" : true,
+        "userId" : "STD-0003",
+        "name" : "Mohammad Ali",
+        "email" : "ali@student.bup.edu.bd",
+        "password" : "student123",
+        "role" : "STUDENT",
+        "createdAt" : "2025-07-04T20:06:18.917581",
+        "isActive" : true,
+        "studentId" : "201901001",
+        "program" : "CSE",
+        "semester" : 7
+      }, {
+        "type" : "student",
+        "displayName" : "Fatima Hassan (201901002)",
+        "active" : true,
+        "userId" : "STD-0004",
+        "name" : "Fatima Hassan",
+        "email" : "fatima@student.bup.edu.bd",
+        "password" : "student123",
+        "role" : "STUDENT",
+        "createdAt" : "2025-07-04T20:06:18.918003",
+        "isActive" : true,
+        "studentId" : "201901002",
+        "program" : "CSE",
+        "semester" : 7
+      } ],
+      "assignments" : [ ],
+      "createdAt" : "2025-07-04T20:06:18.918577",
+      "active" : true
+    },
+    "CRS-0002" : {
+      "courseId" : "CRS-0002",
+      "courseName" : "Business Management",
+      "courseCode" : "BBA-101",
+      "department" : "Business Administration",
+      "creditHours" : 3,
+      "semester" : "Fall 2024",
+      "instructor" : {
+        "type" : "teacher",
+        "displayName" : "Prof. Prof. Sarah Khan (Business Administration)",
+        "active" : true,
+        "userId" : "TCH-0002",
+        "name" : "Prof. Sarah Khan",
+        "email" : "sarah@bup.edu.bd",
+        "password" : "password123",
+        "role" : "TEACHER",
+        "createdAt" : "2025-07-04T20:06:18.917024",
+        "isActive" : true,
+        "department" : "Business Administration",
+        "employeeId" : "EMP002"
+      },
+      "enrolledStudents" : [ {
+        "type" : "student",
+        "displayName" : "Mohammad Ali (201901001)",
+        "active" : true,
+        "userId" : "STD-0003",
+        "name" : "Mohammad Ali",
+        "email" : "ali@student.bup.edu.bd",
+        "password" : "student123",
+        "role" : "STUDENT",
+        "createdAt" : "2025-07-04T20:06:18.917581",
+        "isActive" : true,
+        "studentId" : "201901001",
+        "program" : "CSE",
+        "semester" : 7
+      } ],
+      "assignments" : [ ],
+      "createdAt" : "2025-07-04T20:06:18.942742",
+      "active" : true
+    }
+  },
+  "courseCounter" : 3
+}

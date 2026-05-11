@@ -1,0 +1,54 @@
+{
+  "TCH-0010" : {
+    "userId" : "TCH-0010",
+    "name" : "ahmed",
+    "email" : "ahmed@bup.edu",
+    "password" : "11111111",
+    "role" : "Teacher",
+    "department" : "cse",
+    "employeeId" : "1",
+    "studentId" : null,
+    "program" : null,
+    "semester" : 0,
+    "isActive" : true
+  },
+  "STD-0009" : {
+    "userId" : "STD-0009",
+    "name" : "md",
+    "email" : "md@gmail.com",
+    "password" : "11111111",
+    "role" : "Student",
+    "department" : null,
+    "employeeId" : null,
+    "studentId" : "065",
+    "program" : "cse",
+    "semester" : 4,
+    "isActive" : true
+  },
+  "STD-0007" : {
+    "userId" : "STD-0007",
+    "name" : "Md",
+    "email" : "hossainjunayet1@gmail.com",
+    "password" : "16924475",
+    "role" : "Student",
+    "department" : null,
+    "employeeId" : null,
+    "studentId" : "23524202065",
+    "program" : "CSE",
+    "semester" : 4,
+    "isActive" : true
+  },
+  "TCH-0008" : {
+    "userId" : "TCH-0008",
+    "name" : "ahmed",
+    "email" : "ahmed@bup.edu.bd",
+    "password" : "123",
+    "role" : "Teacher",
+    "department" : "CSE",
+    "employeeId" : "1",
+    "studentId" : null,
+    "program" : null,
+    "semester" : 0,
+    "isActive" : true
+  }
+}

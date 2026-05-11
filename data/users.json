@@ -1,0 +1,42 @@
+{
+  "users" : {
+    "STD-0001" : {
+      "type" : "student",
+      "studentId" : "23524202065",
+      "program" : "CSE",
+      "semester" : 4,
+      "enrolledCourses" : [ ],
+      "submissions" : [ ],
+      "displayName" : "Md (23524202065)",
+      "active" : true,
+      "userId" : "STD-0001",
+      "name" : "Md",
+      "email" : "hossainjunayet1@gmail.com",
+      "password" : "16924475940",
+      "role" : "STUDENT",
+      "createdAt" : "2025-07-04T20:01:18.926649",
+      "isActive" : true
+    }
+  },
+  "teachers" : { },
+  "students" : {
+    "STD-0001" : {
+      "type" : "student",
+      "studentId" : "23524202065",
+      "program" : "CSE",
+      "semester" : 4,
+      "enrolledCourses" : [ ],
+      "submissions" : [ ],
+      "displayName" : "Md (23524202065)",
+      "active" : true,
+      "userId" : "STD-0001",
+      "name" : "Md",
+      "email" : "hossainjunayet1@gmail.com",
+      "password" : "16924475940",
+      "role" : "STUDENT",
+      "createdAt" : "2025-07-04T20:01:18.926649",
+      "isActive" : true
+    }
+  },
+  "userCounter" : 2
+}

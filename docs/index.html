@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Assignment Tracker</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      color: white;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 0 auto 25px;
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      background: white;
+      color: #1e40af;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 6px;
+    }
+
+    .button.secondary {
+      background: #111827;
+      color: white;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    section {
+      background: white;
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    h2 {
+      color: #1e40af;
+      margin-bottom: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 18px;
+      background: #f9fafb;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    code, pre {
+      background: #111827;
+      color: #f9fafb;
+      border-radius: 8px;
+    }
+
+    pre {
+      overflow-x: auto;
+      padding: 16px;
+      margin-top: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Student Assignment Tracker</h1>
+    <p>
+      A Java-based assignment management system for teachers and students to manage courses,
+      assignments, submissions, grading, and progress tracking.
+    </p>
+    <a class="button" href="https://github.com/mdjunayet10/Student-Assignment-Tracker">View on GitHub</a>
+    <a class="button secondary" href="#run">Run Locally</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>Project Overview</h2>
+      <p>
+        Student Assignment Tracker helps teachers create courses and assignments, while students
+        can view assignments, submit work, and track grades. The project follows Object-Oriented
+        Programming principles using Java, Maven, Swing GUI, service classes, models, and JSON-based
+        data persistence.
+      </p>
+    </section>
+
+    <section>
+      <h2>Features</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Teacher Tools</h3>
+          <ul>
+            <li>Create and manage courses</li>
+            <li>Create assignments</li>
+            <li>Review student submissions</li>
+            <li>Grade work and give feedback</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Student Tools</h3>
+          <ul>
+            <li>View enrolled courses</li>
+            <li>See active assignments</li>
+            <li>Submit assignment content</li>
+            <li>Track grades and feedback</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>System Features</h3>
+          <ul>
+            <li>Role-based login</li>
+            <li>JSON data persistence</li>
+            <li>Java Swing interface</li>
+            <li>Maven project structure</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technology Stack</h2>
+      <ul>
+        <li>Java 23</li>
+        <li>Maven</li>
+        <li>Java Swing GUI</li>
+        <li>Jackson JSON processing</li>
+        <li>FlatLaf look and feel</li>
+      </ul>
+    </section>
+
+    <section id="run">
+      <h2>Run Locally</h2>
+      <p>Clone the repository, build it with Maven, and run the Java application:</p>
+      <pre><code>git clone https://github.com/mdjunayet10/Student-Assignment-Tracker.git
+cd Student-Assignment-Tracker
+mvn clean compile
+mvn exec:java -Dexec.mainClass="org.app.Main"</code></pre>
+    </section>
+
+    <section>
+      <h2>Organized Project Structure</h2>
+      <pre><code>Student-Assignment-Tracker/
+├── docs/
+│   └── index.html
+├── src/
+│   └── main/
+│       └── java/
+│           └── org/
+│               └── app/
+│                   ├── Main.java
+│                   ├── controller/
+│                   ├── gui/
+│                   ├── model/
+│                   ├── service/
+│                   └── util/
+├── data/
+├── pom.xml
+├── README.md
+└── .gitignore</code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>Developed by mdjunayet10 · Student Assignment Tracker</p>
+  </footer>
+</body>
+</html>
