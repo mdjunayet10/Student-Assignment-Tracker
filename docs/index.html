@@ -5,261 +5,770 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student Assignment Tracker</title>
   <style>
+    :root {
+      --bg: #eef4ff;
+      --dark: #0f172a;
+      --text: #1e293b;
+      --muted: #64748b;
+      --primary: #2563eb;
+      --secondary: #7c3aed;
+      --success: #16a34a;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --card: #ffffff;
+      --border: #dbeafe;
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
+    }
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f7fb;
-      color: #172033;
-      line-height: 1.6;
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.22), transparent 28%),
+        radial-gradient(circle at top right, rgba(124, 58, 237, 0.18), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
     }
 
-    header {
-      background: linear-gradient(135deg, #1e3a8a, #2563eb);
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 44px;
-      margin-bottom: 14px;
-    }
-
-    header p {
-      max-width: 800px;
-      margin: 0 auto 28px;
-      font-size: 18px;
-      opacity: 0.95;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.2s ease;
-    }
-
-    .button.primary {
-      background: white;
-      color: #1e3a8a;
-    }
-
-    .button.secondary {
-      border: 2px solid white;
-      color: white;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
-
-    main {
-      max-width: 1100px;
+    .page {
+      width: min(1200px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 44px 20px;
+      padding: 24px 0 50px;
     }
 
-    section {
-      margin-bottom: 42px;
-    }
-
-    h2 {
-      font-size: 28px;
-      margin-bottom: 18px;
-      color: #1e3a8a;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 22px;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-      border: 1px solid #e5e7eb;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      color: #111827;
-    }
-
-    .card ul {
-      padding-left: 18px;
-    }
-
-    .tech-list {
+    .navbar {
+      position: sticky;
+      top: 16px;
+      z-index: 20;
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 18px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 12px 40px rgba(15, 23, 42, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.7);
     }
 
-    .tech {
-      background: #dbeafe;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--dark);
+    }
+
+    .logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 14px 35px rgba(37, 99, 235, 0.35);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    a, button {
+      font: inherit;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: 0.2s ease;
+      background: #eaf1ff;
       color: #1e40af;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.14);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+    }
+
+    .hero {
+      min-height: 620px;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 36px;
+      align-items: center;
+      padding: 64px 0 40px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 10px 14px;
       border-radius: 999px;
-      font-weight: bold;
+      background: white;
+      border: 1px solid var(--border);
+      color: #1e40af;
+      font-weight: 900;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
     }
 
-    pre {
-      background: #0f172a;
-      color: #e5e7eb;
-      padding: 20px;
-      border-radius: 14px;
-      overflow-x: auto;
+    h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      color: var(--dark);
+      margin-bottom: 22px;
+    }
+
+    .hero-text p {
+      font-size: 19px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 28px;
+      max-width: 570px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .quick-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 560px;
+    }
+
+    .quick-stat {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+    }
+
+    .quick-stat strong {
+      display: block;
+      font-size: 28px;
+      color: var(--dark);
+    }
+
+    .quick-stat span {
+      color: var(--muted);
+      font-weight: 700;
       font-size: 14px;
     }
 
-    footer {
-      text-align: center;
-      padding: 28px 20px;
-      background: #111827;
-      color: #d1d5db;
+    .app-preview {
+      background: #0f172a;
+      border-radius: 34px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      transform: rotate(1deg);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    footer a {
-      color: #93c5fd;
+    .window {
+      background: #f8fbff;
+      border-radius: 24px;
+      overflow: hidden;
+      transform: rotate(-1deg);
+    }
+
+    .window-bar {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .dot.red { background: #ef4444; }
+    .dot.yellow { background: #f59e0b; }
+    .dot.green { background: #22c55e; }
+
+    .window-title {
+      margin-left: auto;
+      margin-right: auto;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      min-height: 500px;
+    }
+
+    .sidebar {
+      background: #111827;
+      color: white;
+      padding: 22px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #38bdf8, #818cf8);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .profile small {
+      color: #94a3b8;
+      display: block;
+    }
+
+    .menu {
+      display: grid;
+      gap: 10px;
+    }
+
+    .menu-item {
+      padding: 12px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #dbeafe;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .menu-item.active {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+    }
+
+    .content {
+      padding: 24px;
+    }
+
+    .content-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .content-header h2 {
+      color: var(--dark);
+      font-size: 26px;
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 900;
+      font-size: 12px;
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .mini-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .mini-card strong {
+      font-size: 24px;
+      color: var(--dark);
+      display: block;
+    }
+
+    .mini-card span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .assignment-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .assignment {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: center;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .assignment h3 {
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .assignment p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .status {
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .status.blue {
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+
+    .status.orange {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .status.green {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .section {
+      padding: 36px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 28px;
+    }
+
+    .section-title h2 {
+      color: var(--dark);
+      font-size: clamp(30px, 4vw, 44px);
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      border-radius: 26px;
+      padding: 26px;
+      box-shadow: 0 16px 45px rgba(15, 23, 42, 0.1);
+    }
+
+    .feature-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #dbeafe, #ede9fe);
+      font-size: 25px;
+      margin-bottom: 18px;
+    }
+
+    .feature h3 {
+      color: var(--dark);
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      background: white;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      padding: 22px;
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.09);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-number {
+      font-size: 42px;
+      font-weight: 900;
+      color: #dbeafe;
+      margin-bottom: 10px;
+    }
+
+    .step h3 {
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .run-box {
+      background: #0f172a;
+      color: #e5e7eb;
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      overflow-x: auto;
+    }
+
+    .run-box pre {
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding: 28px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .footer a {
+      color: var(--primary);
+      font-weight: 900;
       text-decoration: none;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 32px;
+    @media (max-width: 980px) {
+      .hero {
+        grid-template-columns: 1fr;
       }
 
-      header p {
-        font-size: 16px;
+      .feature-grid,
+      .workflow,
+      .quick-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .navbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .nav-actions {
+        justify-content: stretch;
+      }
+
+      .nav-actions .btn {
+        flex: 1;
+      }
+
+      .hero {
+        padding-top: 38px;
+      }
+
+      .assignment {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Student Assignment Tracker</h1>
-    <p>
-      A Java Swing desktop application for managing courses, assignments,
-      student submissions, grading, and academic progress.
-    </p>
+  <div class="page">
+    <nav class="navbar">
+      <div class="brand">
+        <div class="logo">📘</div>
+        <span>Student Assignment Tracker</span>
+      </div>
 
-    <div class="buttons">
-      <a class="button primary" href="https://github.com/mdjunayet10/Student-Assignment-Tracker" target="_blank">
-        View Source Code
-      </a>
-      <a class="button secondary" href="#run-locally">
-        Run Locally
-      </a>
-    </div>
-  </header>
+      <div class="nav-actions">
+        <a class="btn" href="#features">Features</a>
+        <a class="btn" href="#workflow">Workflow</a>
+        <a class="btn primary" href="https://github.com/mdjunayet10/Student-Assignment-Tracker" target="_blank">View Code</a>
+      </div>
+    </nav>
 
-  <main>
-    <section>
-      <h2>Project Overview</h2>
-      <div class="card">
+    <section class="hero">
+      <div class="hero-text">
+        <div class="badge">✨ Java Swing Assignment Management System</div>
+        <h1>Manage assignments without messy spreadsheets.</h1>
         <p>
-          Student Assignment Tracker helps teachers and students manage academic
-          assignment workflows. Teachers can create courses and assignments,
-          review submissions, grade student work, and provide feedback. Students
-          can view assignments, submit work, and track their progress.
+          A desktop application for teachers and students to organize courses,
+          publish assignments, submit work, review progress, and manage grades
+          through a clean Java Swing interface.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn primary" href="#run">Run Locally</a>
+          <a class="btn" href="https://github.com/mdjunayet10/Student-Assignment-Tracker" target="_blank">GitHub Repository</a>
+        </div>
+
+        <div class="quick-stats">
+          <div class="quick-stat">
+            <strong>2</strong>
+            <span>User Roles</span>
+          </div>
+          <div class="quick-stat">
+            <strong>JSON</strong>
+            <span>Local Data Storage</span>
+          </div>
+          <div class="quick-stat">
+            <strong>Java</strong>
+            <span>Swing Desktop App</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-preview">
+        <div class="window">
+          <div class="window-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="window-title">Teacher Dashboard Preview</span>
+          </div>
+
+          <div class="dashboard">
+            <aside class="sidebar">
+              <div class="profile">
+                <div class="avatar">T</div>
+                <div>
+                  <strong>Teacher</strong>
+                  <small>Dashboard</small>
+                </div>
+              </div>
+
+              <div class="menu">
+                <div class="menu-item active">Assignments</div>
+                <div class="menu-item">Courses</div>
+                <div class="menu-item">Submissions</div>
+                <div class="menu-item">Grades</div>
+              </div>
+            </aside>
+
+            <main class="content">
+              <div class="content-header">
+                <div>
+                  <h2>Assignments</h2>
+                  <p class="muted">Track class work and submissions</p>
+                </div>
+                <span class="pill">Active</span>
+              </div>
+
+              <div class="cards">
+                <div class="mini-card">
+                  <strong>12</strong>
+                  <span>Total Assignments</span>
+                </div>
+                <div class="mini-card">
+                  <strong>38</strong>
+                  <span>Submissions</span>
+                </div>
+                <div class="mini-card">
+                  <strong>21</strong>
+                  <span>Graded</span>
+                </div>
+              </div>
+
+              <div class="assignment-list">
+                <div class="assignment">
+                  <div>
+                    <h3>Java OOP Project</h3>
+                    <p>Course: Object Oriented Programming</p>
+                  </div>
+                  <span class="status blue">Open</span>
+                </div>
+
+                <div class="assignment">
+                  <div>
+                    <h3>Database ER Diagram</h3>
+                    <p>Course: Database Systems</p>
+                  </div>
+                  <span class="status orange">Due Soon</span>
+                </div>
+
+                <div class="assignment">
+                  <div>
+                    <h3>Software Design Report</h3>
+                    <p>Course: Software Engineering</p>
+                  </div>
+                  <span class="status green">Graded</span>
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="section-title">
+        <h2>Built for assignment tracking</h2>
+        <p>
+          The project focuses on the main academic workflow between teachers and students.
         </p>
       </div>
-    </section>
 
-    <section>
-      <h2>Key Features</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>Teacher Features</h3>
-          <ul>
-            <li>Create and manage courses</li>
-            <li>Create assignments with due dates</li>
-            <li>Review student submissions</li>
-            <li>Grade submissions and give feedback</li>
-          </ul>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="feature-icon">👨‍🏫</div>
+          <h3>Teacher Dashboard</h3>
+          <p>Create courses, add assignments, review submissions, grade student work, and give feedback.</p>
         </div>
 
-        <div class="card">
-          <h3>Student Features</h3>
-          <ul>
-            <li>Register and log in as a student</li>
-            <li>View assigned coursework</li>
-            <li>Submit assignment work</li>
-            <li>Check grades and feedback</li>
-          </ul>
+        <div class="feature">
+          <div class="feature-icon">🎓</div>
+          <h3>Student Dashboard</h3>
+          <p>Students can view assignments, submit their work, check grades, and track feedback.</p>
         </div>
 
-        <div class="card">
-          <h3>System Features</h3>
-          <ul>
-            <li>Role-based login system</li>
-            <li>Java Swing user interface</li>
-            <li>JSON-based data storage</li>
-            <li>Object-oriented project structure</li>
-          </ul>
+        <div class="feature">
+          <div class="feature-icon">💾</div>
+          <h3>Local Data Storage</h3>
+          <p>Uses JSON-based persistence so the desktop app can store users, courses, assignments, and submissions.</p>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2>Technology Stack</h2>
-      <div class="tech-list">
-        <span class="tech">Java</span>
-        <span class="tech">Maven</span>
-        <span class="tech">Java Swing</span>
-        <span class="tech">Jackson JSON</span>
-        <span class="tech">OOP</span>
+    <section id="workflow" class="section">
+      <div class="section-title">
+        <h2>Simple academic workflow</h2>
+        <p>
+          From creating coursework to reviewing student progress, the app keeps the process organized.
+        </p>
+      </div>
+
+      <div class="workflow">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>Register</h3>
+          <p>Teachers and students create accounts with role-based access.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>Create</h3>
+          <p>Teachers create courses and publish assignments with details and deadlines.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>Submit</h3>
+          <p>Students view assignments and submit their work through the app.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">04</div>
+          <h3>Grade</h3>
+          <p>Teachers review submissions, assign grades, and provide feedback.</p>
+        </div>
       </div>
     </section>
 
-    <section id="run-locally">
-      <h2>Run Locally</h2>
-      <div class="card">
-        <p>This is a desktop Java application. Clone the repository and run it with Maven:</p>
-        <br />
-        <pre><code>git clone https://github.com/mdjunayet10/Student-Assignment-Tracker.git
+    <section id="run" class="section">
+      <div class="section-title">
+        <h2>Run the desktop app locally</h2>
+        <p>
+          This GitHub Pages site is a professional landing page. The real application is a Java Swing desktop app.
+        </p>
+      </div>
+
+      <div class="run-box">
+        <pre>git clone https://github.com/mdjunayet10/Student-Assignment-Tracker.git
 cd Student-Assignment-Tracker
 mvn clean compile
-mvn exec:java -Dexec.mainClass="org.app.Main"</code></pre>
+mvn exec:java -Dexec.mainClass="org.app.Main"</pre>
       </div>
     </section>
 
-    <section>
-      <h2>Important Note</h2>
-      <div class="card">
-        <p>
-          This GitHub Pages site is a project showcase page. The actual application
-          is a Java Swing desktop app, so it must be downloaded and run locally.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>
-      Developed by mdjunayet10 ·
-      <a href="https://github.com/mdjunayet10/Student-Assignment-Tracker" target="_blank">
-        GitHub Repository
-      </a>
-    </p>
-  </footer>
+    <footer class="footer">
+      <p>
+        Developed by mdjunayet10 ·
+        <a href="https://github.com/mdjunayet10/Student-Assignment-Tracker" target="_blank">View GitHub Repository</a>
+      </p>
+    </footer>
+  </div>
 </body>
 </html>
